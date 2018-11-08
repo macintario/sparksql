@@ -6,7 +6,8 @@ os.environ['SPARK_HOME'] = "/git/spark-2.3.2-bin-hadoop2.7"
 
 sys.path.append("/git/spark-2.3.2-bin-hadoop2.7/python")
 sys.path.append("/git/spark-2.3.2-bin-hadoop2.7/python/lib/py4j-0.10.6-src.zip")
-###############################################################################3
+###############################################################################
+
 from pyspark import SparkContext, SQLContext
 
 sc = SparkContext()
@@ -16,15 +17,12 @@ rdd_ap = sc.textFile("alumnos_apellidos.csv")
 
 
 
-#wordcount = rdd.flatMap(lambda x: x.split()).map(lambda x: (x,len(x))).reduceByKey(lambda x, y: x ).toDF(["nombre", "long"])
 name_df_csv = rdd.map(lambda x: x.split(",")).map(lambda (id, nombre): (id, nombre, len(nombre))).toDF(["id", "nombre", "long"])
 
 name_df_csv.show()
 
 name_df_csv.filter(name_df_csv.long.between(4, 5)).show()
-#wordcount.filter(wordcount.long.between(4, 5)).show()
 
-#wordcount_ape = rdd_ap.flatMap(lambda x: x.split()).map(lambda x: (x,len(x))).reduceByKey(lambda x, y: x ).toDF(["apellido", "long"])
 ln_df_csv = rdd_ap.map(lambda x: x.split(",")).map(lambda (id,apellido): (id, apellido, len(apellido))).toDF(["id", "apellido", "long"])
 
 ln_df_csv.show()
