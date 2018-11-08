@@ -1,0 +1,25 @@
+create schema sparksql;
+create table sparksql.alumnos(ID long, NOMBRE varchar(50),APELLIDO varchar(50));
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(1,'Alejandro','Betanzos');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(2,'Juan','Caballero');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(3,'Miguel','Chávez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(4,'Oliver','Cisneros');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(5,'Jorge','Espinoza');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(6,'Jorge','Farfán');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(7,'Carlos','Garnica');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(8,'javier','hernandez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(9,'Gamaliel','Jiménez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(10,'Eliuth','Lopez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(11,'Ricardo','López');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(12,'Montserrat','Mendoza');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(13,'Eric','Montufar');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(14,'Alejandro','Nava');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(15,'Oscar','Mellado');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(16,'Gregorio','Rodriguez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(17,'Jorge','Salgado');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(18,'Deimer','Sánchez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(19,'Luis','Torres');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(20,'Mordreaut','Vasquez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(21,'Luis','Vazquez');
+insert into sparksql.alumnos(ID,NOMBRE,APELLIDO) VALUES(22,'Geovanni','Valdivieso');
+ 
