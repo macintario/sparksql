@@ -38,8 +38,10 @@ ln_df_json_long = ln_df_json.withColumn("long", length("apellido"))
 
 
 name_df_json_long.show()
-
 ln_df_json_long.show()
+
+name_df_json_long.filter(name_df_json_long.long.between(4, 5)).show()
+ln_df_json_long.filter(ln_df_json_long.long.between(7, 8)).show()
 
 name_df_json_long.createTempView("nombres")
 ln_df_json_long.createTempView("apellidos")

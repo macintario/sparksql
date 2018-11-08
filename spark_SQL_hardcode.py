@@ -35,10 +35,16 @@ ln_df_csv.createTempView("apellidos")
 
 sql_sc.sql("SELECT n.nombre, a.apellido, n.long+a.long lt FROM nombres n JOIN apellidos a ON n.id = a.id").show()
 
+#inner_join = ta.join(tb, ta.name == tb.name)
+#inner_join.show()
 
 inner_join = name_df_csv.join(ln_df_csv, name_df_csv.id == ln_df_csv.id)
 inner_join.show()
 
 
+
+#dfcsv
+
+#sql_sc.sql("SELECT * FROM nombres n JOIN apellidos a ON n.id = a.id").show()
 
 print("Ok")
