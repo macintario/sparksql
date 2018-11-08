@@ -70,27 +70,27 @@ losApellidos = [
 rdd = sc.parallelize(losNombres)
 rdd_ap =sc.parallelize(losApellidos)
 
-name_df_csv = rdd.map(lambda x: x.split(",")).map(lambda (id, nombre): (id, nombre, len(nombre))).toDF(
+name_df_hc = rdd.map(lambda x: x.split(",")).map(lambda (id, nombre): (id, nombre, len(nombre))).toDF(
     ["id", "nombre", "long"])
 
-name_df_csv.show()
+name_df_hc.show()
 
-name_df_csv.filter(name_df_csv.long.between(4, 5)).show()
+name_df_hc.filter(name_df_hc.long.between(4, 5)).show()
 
-ln_df_csv = rdd_ap.map(lambda x: x.split(",")).map(lambda (id, apellido): (id, apellido, len(apellido))).toDF(
+ln_df_hc = rdd_ap.map(lambda x: x.split(",")).map(lambda (id, apellido): (id, apellido, len(apellido))).toDF(
     ["id", "apellido", "long"])
 
-ln_df_csv.show()
+ln_df_hc.show()
 
-ln_df_csv.filter(ln_df_csv.long.between(7, 8)).show()
+ln_df_hc.filter(ln_df_hc.long.between(7, 8)).show()
 
-name_df_csv.createTempView("nombres")
-ln_df_csv.createTempView("apellidos")
+name_df_hc.createTempView("nombres")
+ln_df_hc.createTempView("apellidos")
 
 sql_sc.sql("SELECT n.nombre, a.apellido, n.long+a.long lt FROM nombres n JOIN apellidos a ON n.id = a.id").show()
 
 
-inner_join = name_df_csv.join(ln_df_csv, name_df_csv.id == ln_df_csv.id)
+inner_join = name_df_hc.join(ln_df_hc, name_df_hc.id == ln_df_hc.id)
 inner_join.show()
 
 print("Ok")
